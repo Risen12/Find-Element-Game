@@ -1,22 +1,25 @@
 using UnityEngine;
 
-public class FirstAnimationTaskTextController : MonoBehaviour
+namespace Game.Animation
 {
-    [SerializeField] private TaskTextAnimationController _taskTextAnimationController;
-
-    private bool _isFirstLevel;
-
-    private void Awake()
+    public class FirstAnimationTaskTextController : MonoBehaviour
     {
-        _isFirstLevel = true;
-    }
+        [SerializeField] private TaskTextAnimationController _taskTextAnimationController;
 
-    public void StartFadeAnimation()
-    {
-        if (_isFirstLevel)
+        private bool _isFirstLevel;
+
+        private void Awake()
         {
-            _taskTextAnimationController.StartFadeInAnimation();
-            _isFirstLevel = false;
+            _isFirstLevel = true;
+        }
+
+        public void StartFadeAnimation()
+        {
+            if (_isFirstLevel == true)
+            {
+                _taskTextAnimationController.StartFadeInAnimation();
+                _isFirstLevel = false;
+            }
         }
     }
 }

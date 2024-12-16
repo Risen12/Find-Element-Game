@@ -36,8 +36,7 @@ namespace Game
         {
             if (_currentIndex == _levels.Length - 1)
             {
-                // закончи игру endGamer
-                Debug.Log("Игра закончена!");
+                _endGamer.HandleEndGame();
                 return;
             }
 

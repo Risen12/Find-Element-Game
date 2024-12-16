@@ -2,15 +2,23 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
-public class TaskTextAnimationController : MonoBehaviour
+namespace Game.Animation
 {
-    [SerializeField] private float _durarion;
-
-    private TextMeshProUGUI _taskText;
-
-    public void StartFadeInAnimation()
+    [RequireComponent(typeof(TextMeshProUGUI))]
+    public class TaskTextAnimationController : MonoBehaviour
     {
-        _taskText.DOColor(Color.black, _durarion).SetEase(Ease.InQuad);
+        [SerializeField] private float _durarion;
+
+        private TextMeshProUGUI _taskText;
+
+        private void Awake()
+        {
+            _taskText = GetComponent<TextMeshProUGUI>();
+        }
+
+        public void StartFadeInAnimation()
+        {
+            _taskText.DOColor(Color.black, _durarion).SetEase(Ease.InQuad);
+        }
     }
 }

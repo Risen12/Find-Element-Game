@@ -1,3 +1,4 @@
+using Game.Animation;
 using Game.Model;
 using Game.UI;
 using UnityEngine;

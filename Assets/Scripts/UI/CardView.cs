@@ -28,14 +28,9 @@ namespace Game.UI
         public void ChangeClickablekState(bool state)
         {
             if (state == true)
-            {
                 _collider.enabled = true;
-            }
             else
-            {
                 _collider.enabled = false;
-                Debug.Log(_collider.enabled);
-            }
         }
     }
 }

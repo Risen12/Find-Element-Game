@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using Game.UI;
-using System.Collections;
 
 namespace Game.Animation
 {

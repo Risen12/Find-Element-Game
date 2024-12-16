@@ -4,11 +4,16 @@ namespace Game.UI
 {
     public class Particler : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem _startsEffect;
+        [SerializeField] private ParticleSystem _startsEffectPrefab;
 
-        public void PlayRightCardEffect(Vector3 position)
-        { 
-            
+        private ParticleSystem _lastEffect;
+
+        public void PlayRightCardEffect(Transform target)
+        {
+            _lastEffect = Instantiate(_startsEffectPrefab, target);
+            _lastEffect.Play();
         }
+
+        public void StopLastEffect() => _lastEffect?.Stop();
     }
 }

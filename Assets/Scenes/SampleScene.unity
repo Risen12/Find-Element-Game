@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2dff52a0a55e646be2ad6dde4c840b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startsEffect: {fileID: 0}
+  _startsEffectPrefab: {fileID: 7938384439400024400, guid: b6e54acc881a03c4a9719b161a25a3e3, type: 3}
 --- !u!4 &47673184
 Transform:
   m_ObjectHideFlags: 0
@@ -505,6 +505,7 @@ GameObject:
   - component: {fileID: 367503591}
   - component: {fileID: 367503593}
   - component: {fileID: 367503592}
+  - component: {fileID: 367503594}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -544,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -569,6 +570,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367503590}
   m_CullTransparentMesh: 1
+--- !u!114 &367503594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367503590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df34b7ec0c65cd34eb23bbdb83fc5a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 1
 --- !u!1 &466290388
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974963237}
   - component: {fileID: 974963238}
+  - component: {fileID: 974963239}
   m_Layer: 5
   m_Name: RestartGameScreen
   m_TagString: Untagged
@@ -899,6 +914,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &974963239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974963236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd166bd7c55b1f4f9d5a4187044e8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _restartGameButton: {fileID: 1155656967}
+  _fadeScreenAnimationController: {fileID: 367503594}
+  _restartText: {fileID: 20014034}
 --- !u!1 &982616903
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1007,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &982616907
 RectTransform:
@@ -1159,7 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5b2980e5a75124293f02ea9d5a6602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _durarion: 0.5
+  _durarion: 1
 --- !u!1 &1047955165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1245,7 @@ GameObject:
   - component: {fileID: 1155656963}
   - component: {fileID: 1155656966}
   - component: {fileID: 1155656965}
+  - component: {fileID: 1155656967}
   - component: {fileID: 1155656964}
   m_Layer: 5
   m_Name: Button
@@ -1239,8 +1270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -150}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 100, y: -175}
+  m_SizeDelta: {x: 200, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155656964
 MonoBehaviour:
@@ -1324,6 +1355,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155656962}
   m_CullTransparentMesh: 1
+--- !u!114 &1155656967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155656962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763b6665aaa30e648ab10124c93ba8f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1169681283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,7 +1734,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a95b952d159e264a85ed1ab61fd7ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fade: {fileID: 367503592}
+  _fadeScreenAnimationController: {fileID: 367503594}
+  _restartGameScreen: {fileID: 974963239}
+  _cardClicker: {fileID: 466290389}
+  _particler: {fileID: 47673183}
 --- !u!4 &2096930150
 Transform:
   m_ObjectHideFlags: 0

@@ -21,6 +21,14 @@ namespace Game.UI
             SubscribeForCardsClickedEvents();
         }
 
+        public void MakeCardsUnclickable()
+        { 
+            foreach (CardHolder card in _cards) 
+            {
+                card.CardView.ChangeClickablekState(false);
+            }
+        }
+
         private void SubscribeForCardsClickedEvents()
         {
             foreach (CardHolder card in _cards)

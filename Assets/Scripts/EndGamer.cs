@@ -1,10 +1,22 @@
+using Game.Animation;
+using Game.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Game
 {
     public class EndGamer : MonoBehaviour
     {
-        [SerializeField] private Image _fade;
+        [SerializeField] private FadeScreenAnimationController _fadeScreenAnimationController;
+        [SerializeField] private RestartGameScreen _restartGameScreen;
+        [SerializeField] private CardClicker _cardClicker;
+        [SerializeField] private Particler _particler;
+
+        public void HandleEndGame()
+        {
+            _fadeScreenAnimationController.StartBarelyFadeOutAnimation();
+            _restartGameScreen.gameObject.SetActive(true);
+            _particler.StopLastEffect();
+            _cardClicker.MakeCardsUnclickable();
+        }
     }
 }

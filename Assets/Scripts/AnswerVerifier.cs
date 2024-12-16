@@ -38,13 +38,10 @@ namespace Game
         {
             bool result = VerifyCard(card.CardIdentifier);
 
-            Debug.Log(card.CardData);
-            Debug.Log(result);
-
             if (result == true)
             {
                 _cardAnimationController.PlayRightCardAnimation(card.CardView);
-                _particler.PlayRightCardEffect(card.transform.position);
+                _particler.PlayRightCardEffect(card.transform);
                 StartCoroutine(WaitAfterChooseRightCard());
             }
             else
