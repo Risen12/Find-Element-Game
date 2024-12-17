@@ -10,7 +10,6 @@ namespace Game.Animation
         [SerializeField] private Vector3 _bounceMinSize;
         [SerializeField] private float _duration;
         [SerializeField] private float _moveDistance;
-        [SerializeField] private float _delayAfterAnimation;
 
         private Vector3 _defaultSize;
 
@@ -24,7 +23,6 @@ namespace Game.Animation
             bounceSequence.Append(target.transform.DOScale(_bounceMaxSize, _duration).SetEase(Ease.OutBounce))
                           .Append(target.transform.DOScale(_bounceMinSize, _duration).SetEase(Ease.OutBounce))
                           .Append(target.transform.DOScale(_defaultSize, _duration).SetEase(Ease.OutBounce))
-                          .AppendInterval(_delayAfterAnimation)
                           .OnComplete(() => HandleEndAnimation(card));
 
             bounceSequence.Play();
@@ -51,7 +49,6 @@ namespace Game.Animation
             bounceSequence.Append(target.DOMoveX(target.position.x - _moveDistance, _duration).SetEase(Ease.InBounce))
                           .Append(target.DOMoveX(target.position.x + _moveDistance, _duration).SetEase(Ease.InBounce))
                           .Append(target.DOMoveX(target.position.x, _duration).SetEase(Ease.InBounce))
-                          .AppendInterval(_delayAfterAnimation)
                           .OnComplete(() => HandleEndAnimation(card));
 
             bounceSequence.Play();
